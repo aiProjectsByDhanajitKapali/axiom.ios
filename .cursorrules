@@ -1,0 +1,12 @@
+# .cursorrules for Axiom.ios
+
+## Tech Stack Rules
+- Backend: Python 3.11+, FastAPI (async endpoints preferred), Uvicorn.
+- Vector DB: ChromaDB (persistent local client instance targeting `./chroma_db`).
+- Inference/Embeddings: Ollama local API (`http://localhost:11434`). Models: `qwen3:4b` (inference) and `nomic-embed-text` (embeddings).
+- Frontend: Vite + React + Tailwind CSS (or Next.js). Clean UI, single-page layout.
+
+## Code Quality Rules
+- Keep logic modular. Separate data digestion (`indexer.py`) from api routing (`app.py`).
+- Maintain strict deterministic temperature controls (`temperature: 0.0`) when querying Ollama to limit hallucinations.
+- Ensure the frontend strictly maps code responses within readable, scrollable markdown wrappers with syntax highlighting capabilities.
